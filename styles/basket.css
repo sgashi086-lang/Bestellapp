@@ -1,0 +1,85 @@
+.basketSection {
+    position: sticky;
+    top: 0;
+    margin-left: calc(-300px - max(0px, (100% - 1440px) / 2));
+    padding: 60px 30px;
+    z-index: 10;
+    width: 300px;
+    height: 600px;
+    flex-shrink: 0;
+    background-color: rgb(60, 59, 59);
+    overflow-y: auto;
+    scrollbar-width: none;
+    border-radius:25px 0 0 25px;
+}
+
+.basketContainer {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    background-color: white;
+}
+
+.basketContainer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 10px;
+    background: 
+        linear-gradient(-45deg, transparent 75%, #ffffff 75%),
+        linear-gradient(45deg, transparent 75%, #ffffff 75%);
+    background-size: 10px 20px;
+}
+
+.basketItems{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.basketCard {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.basketCardTop {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.basketCardBottom {
+    /* background-color: green; */
+}
+
+.basketCardBottom {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+
+.basketSummary {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 5px;
+}
+
+.buyBtn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    width: fit-content;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+}

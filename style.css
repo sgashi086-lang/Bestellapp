@@ -1,0 +1,169 @@
+header, footer {
+    padding: 20 max(50px, (100% - 1440px) / 2);
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(59, 59, 109, 1);
+    color: white;
+}
+
+header {
+    padding: 20px max(50px, (100% - 1440px) / 2);
+}
+
+header img:nth-child(1) {
+    width: 90px;
+}
+
+header img:nth-child(2) {
+    width: 30px;
+}
+
+.orderSection, .basketSection {
+    margin-top: 50px;
+}
+
+.heroSection {
+    width: 100%;
+    padding: 0px max(0px, (100% - 1440px) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.heroTitle {
+    width: 100%;
+    height: 400px;
+    background-image: url(./assets/images/backgrounds/Hero_Cover4.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.heroImage {
+    position: absolute;
+    top: 350px;
+    width: 215px;
+    height: 215px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.heroImage img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    
+}
+
+.heroText {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.mainContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contentWrapper {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+section h2 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 0 0 5px max(150px, (100% - 1440px), 50px);
+    text-align: left;    
+    background-color:rgba(59, 59, 109, 1);
+    font-size: 50px;
+    color: white;
+}
+
+section h2 img {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    width: 100px;
+}
+
+.listContainer {
+    padding: 20px calc(max(50px, (100% - 1440px) / 2) + 330px) 20px max(50px, (100% - 1440px) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dishCard {
+    padding: 15px;
+    max-width: 713px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 15px;
+    border-radius: 12px;
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.dishCard img {
+    width: 200px;
+    max-height: 133px;
+    border-radius: 12px;
+    /* border: 2px solid blue; */
+}
+
+.infoBox {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infoBox span {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.dishCard div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1; */
+    align-items: flex-end;
+    justify-content: space-between;
+    /* background-color: blue; */
+
+}
+
+.buyBox button {
+    all: unset;
+    padding: 5px 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+}
+
+footer {
+    padding: 20px max(50px, (100% - 1440px) / 2);
+}

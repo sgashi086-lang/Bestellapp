@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellapp</title>
+
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/basket.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+
+
+    <script defer src="./scripts/db.js"></script>
+    <script defer src="./scripts/templates.js"></script>
+    <script defer src="./scripts/basket.js"></script>
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="./assets/icons/Logo 02.png" alt="Bestellapp Logo">
+        <img src="./assets/icons/menu.png" alt="Burgermenu">
+    </header>
+    <main>
+        <section class="heroSection" id="heroSection">
+            <div class="heroTitle"></div>
+            <div class="heroImage">
+                <img src="./assets/images/backgrounds/Burger1.jpg" alt="BurgerHouse Logo">
+            </div>
+            <div class="heroText">
+                <h1><span>American</span><span>Burger</span></h1>
+                <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
+            </div>
+            <p>Free Delivery up to 35 $</p>
+        </section>
+        <div class="mainContainer" id="mainContainer">
+            <div class="contentWrapper" id="contentWrapper">
+                <section class="orderSection" id="burgerSection">
+                    <h2><img src="./assets/icons/burger_icon.png" alt="">Burgers</h2>
+                    <div class="listContainer" id="burgerList"></div>
+                </section>
+                <section class="orderSection" id="pizzaSection">
+                    <h2><img src="./assets/icons/pizza_icon.png" alt="">Pizza (30cm)</h2>
+                    <div class="listContainer" id="pizzaList"></div>
+                </section>
+                <section class="orderSection" id="saladSection">
+                    <h2><img src="./assets/icons/salad_icon.png" alt="">Salads</h2>
+                    <div class="listContainer" id="saladList"></div>
+                </section>
+            </div>
+            <section class="basketSection" id="basketSection">
+                <div class="basketContainer" id="basketContainer">
+                    <h3><img alt="">Your Basket</h3>
+                    <div class="deliveryToggle" id="deliveryToggleContainer"></div>
+                    <div id="basketItems" class="basketItems"></div>
+                    <div id="basketSummary" class="basketSummary"></div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <footer>
+        <span>&copy; 2026 Bestellapp</span>
+        <span>Imprint</span>
+        <span>Cookies</span>
+    </footer>
+
+    
+
+</body>
+
+</html>
