@@ -8,6 +8,17 @@ function clearBasketContainers(toggle, items, summary) {
     summary.innerHTML = '';
 }
 
+function removeContent() {
+    let basketSection  = document.getElementById('basketContainer');
+    let basketItems  = document.getElementById('basketItems');
+    if (basketItems.innerHTML.trim() === '' || basketItems.textContent.includes('No Order yet')) {
+        basketSection.classList.add('d_none');
+    }
+    else {
+        basketSection.classList.remove('d_none');
+    }
+}
+
 function findBasketItem(name) {
     for (let i = 0; i < basket.length; i++) {
         if (basket[i].name === name) {
@@ -39,6 +50,7 @@ function renderBasket() {
     toggleContainer.innerHTML = getDeliveryToggleTemplate(isDelivery);
     renderBasketItems(basketItems);
     renderBasketSummary(basketSummary);
+    removeContent();
 }
 
 function setDeliveryMode(mode) {
@@ -73,21 +85,32 @@ function increaseAmount(index) {
 }
 
 function decreaseAmount(index) {
+    let content = document.getElementById('basketContainer');
     if (basket[index].amount > 1) {
         basket[index].amount--;
     } else {
         basket.splice(index, 1)
     }
+    if (basket.length === 0) {
+        content.classList.add('d_none');
+    }
     renderBasket();
 }
 
 function removeItem(index) {
-    basket.splice(index, 1)
+    let content = document.getElementById('basketContainer');
+    basket.splice(index, 1);
     renderBasket();
+
+    if (basket.length === 0) {
+        content.classList.add('d_none');
+    }
 }
 
 function orderNow() {
+    let order = document.getElementById('basketSection');
     basket = [];
+    order.classList.add('d_none')
     renderBasket();
 }
 

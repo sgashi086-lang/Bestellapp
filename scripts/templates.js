@@ -18,7 +18,7 @@ function getMenuTemplate(item) {
 
 function getBasketItemTemplate(item, index) {
     return `
-        <div class="basketCard">
+        <div class="basketCard" id="basketCard>
             <div class="basketCardTop">
                 <span class="basketItemTitle">${item.amount} x ${item.name}</span>
                 <button type="button" class="deleteBtn" onclick="removeItem(${index})">x</button>
