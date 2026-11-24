@@ -16,6 +16,22 @@ function getMenuTemplate(item) {
     `;
 }
 
+function getDeliveryToggleTemplate(isDelivery) {
+    return `
+        <div class="deliveryToggle">
+            <button type="button" class="toggleBtn ${isDelivery ? 'active' : ''}" onclick="setDeliveryMode(true)">
+                <img src="./assets/icons/delivery_icon2.png" alt="Delivery Icon">
+                Delivery
+            </button>
+            <button type="button" class="toggleBtn ${!isDelivery ? 'active' : ''}" onclick="setDeliveryMode(false)">
+                <img src="./assets/icons/pickup_icon.png" alt="Pickup Icon">
+                Pick-up
+            </button>
+        </div>
+        <hr>
+    `;
+}
+
 function getBasketItemTemplate(item, index) {
     return `
         <div class="basketCard">
@@ -60,21 +76,6 @@ function getBasketSummaryTemplate(subtotal, deliveryFee, total) {
         <button type="button" class="buyBtn" onclick="orderNow()">
             Buy now (${total.toFixed(2)} $)
         </button>
-    `;
-}
-
-function getDeliveryToggleTemplate(isDelivery) {
-    return `
-        <div class="deliveryToggle">
-            <button type="button" class="toggleBtn ${isDelivery ? 'active' : ''}" onclick="setDeliveryMode(true)">
-                <img src="./assets/icons/delivery_icon2.png" alt="Delivery Icon">
-                Delivery
-            </button>
-            <button type="button" class="toggleBtn ${!isDelivery ? 'active' : ''}" onclick="setDeliveryMode(false)">
-                <img src="./assets/icons/pickup_icon.png" alt="Pickup Icon">
-                Pick-up
-            </button>
-        </div>
     `;
 }
 

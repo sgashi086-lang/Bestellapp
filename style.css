@@ -22,9 +22,13 @@ header img:nth-child(2) {
     width: 30px;
 }
 
+p, span {
+    letter-spacing: 1px;
+}
+
 .orderSection,
 .basketSection {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .heroSection {
@@ -49,7 +53,7 @@ header img:nth-child(2) {
 
 .heroImage {
     position: absolute;
-    top: 370px;
+    top: 369px;
     width: 165px;
     height: 165px;
     display: flex;
@@ -57,7 +61,20 @@ header img:nth-child(2) {
     align-items: center;
     border-radius: 50%;
     background-color: white;
+    
+    animation: bildAnimation 5s ease forwards;
 }
+
+@keyframes bildAnimation {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(150px);
+    }
+}
+
+
 
 .heroImage::before,
 .heroImage::after {
@@ -84,29 +101,37 @@ header img:nth-child(2) {
     background: radial-gradient(circle at 100% 0, transparent 24px, white 25px);
 }
 
-/* .heroImage:hover {
-    transform: translateX(100px)
-} */
-
 .heroImage img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+
+    animation: imgRotation 5s ease forwards;
 }
 
+@keyframes imgRotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 .heroText {
-    padding: 5px;
+    padding: 20px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
+    container-type: inline-size;
 }
 
 h1 {
     font-family: 'Lobster Two';
-    font-size: 56px;
+    font-size: clamp(3rem, 2.8239rem + 0.7512cqi, 3.5rem);
     font-style: normal;
     font-weight: 700;
 }
@@ -122,7 +147,7 @@ h1:nth-child(1) {
 .heroText p {
     font-family: 'Roboto Condensed';
     font-style: normal;
-    font-size: 18px;
+    font-size: clamp(1.125rem, 1.081rem + 0.1878cqi, 1.25rem);
     font-weight: 500;
 }
 
@@ -135,11 +160,11 @@ h1:nth-child(1) {
 
 .sectionNavBar {
     position: absolute;
-    bottom: 130px;
+    top: 230px;
     right: calc(max(0px, (100% - 1440px) / 2) + 315px);
     z-index: 999;
     width: fit-content;
-    height: 100%;
+    height: calc(100% - 300px);
     transform: translateY(30px);
 }
 
@@ -173,9 +198,8 @@ h1:nth-child(1) {
 }
 
 
-.contentWrapper>p {
+.contentWrapper > p {
     margin-top: 50px;
-    margin-bottom: -20px;
     padding: 6px 50px;
     justify-self: center;
     border-radius: 50%;
@@ -203,17 +227,21 @@ section h2 {
     color: white;
 }
 
+.pizzaTitle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
 section h2 span {
     font-family: 'Roboto Condensed';
-    font-size: 40px;
+    font-size: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
     font-style: normal;
     font-weight: 400;
 }
 
 section h2 img {
-    /* position: absolute; */
-    /* bottom: 15px;
-    left: 20px; */
     margin-top: -50px;
     width: 120px;
 }
@@ -261,13 +289,15 @@ section h2 img {
     color: white;
 }
 
-.dishCard div:nth-child(3) {
+.infoBox p {
+    font-size: 16px;
+}
+
+.buyBox {
     display: flex;
     flex-direction: column;
-    /* flex: 1; */
     align-items: flex-end;
     justify-content: space-between;
-    /* background-color: blue; */
 
 }
 
@@ -278,6 +308,7 @@ section h2 img {
     flex-direction: column;
     border-radius: 20px;
     background-color: white;
+    font-size: 16px;
     color: black;
     cursor: pointer;
 }

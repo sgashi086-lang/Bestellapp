@@ -164,6 +164,7 @@ function renderDialog() {
 function openModal() {
     let dialog = document.getElementById('myDialog');
     document.getElementById('basketSection').classList.add('d_none');
+    document.body.style.overflow = 'hidden';
     dialog.showModal();
     modalTimeout = setTimeout(closeModal, 3000);
 }
@@ -174,6 +175,7 @@ function closeModal() {
     if (dialog.open) {
         dialog.close();
     }
+    document.body.style.overflow = '';
     document.getElementById('basketSection').classList.remove('d_none');
     document.getElementById('myDialog').classList.add('d_none');
 }
