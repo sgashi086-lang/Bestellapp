@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     margin-left: calc(-300px - max(0px, (100% - 1440px) / 2));
-    padding: 60px 30px;
+    padding: 30px 30px;
     z-index: 10;
     width: 300px;
     height: 600px;
@@ -10,17 +10,28 @@
     background-color: rgb(60, 59, 59);
     overflow-y: auto;
     scrollbar-width: none;
-    border-radius:25px 0 0 25px;
+    box-shadow: -15px 0 30px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 25px 0 0 25px;
+    font-family: 'Roboto Condensed';
 }
 
 .basketContainer {
     position: relative;
+    z-index: 1;
     padding: 10px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
     background-color: white;
+    font-family: 'VT323';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.basketContainer h3 {
+    font-size: 26px;
 }
 
 .basketContainer::before {
@@ -30,41 +41,87 @@
     bottom: -10px;
     width: 100%;
     height: 10px;
-    background: 
+    background:
         linear-gradient(-45deg, transparent 75%, #ffffff 75%),
         linear-gradient(45deg, transparent 75%, #ffffff 75%);
     background-size: 10px 20px;
 }
 
-.basketItems{
+.basketItems {
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.deliveryToggle {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.deliveryToggle button {
+    all: unset;
+    padding: 5px 10px;
+    border-radius: 16px;
+    background-color: grey;
+    font-family: 'Roboto Condensed';
+    color: white;
+}
+
+.deliveryToggle button.active {
+    background-color: green;
+}
+
+.basketScrollBox {
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .basketCard {
     padding: 5px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 15px;
     border-radius: 5px;
-    background-color: white;
+    font-size: 18px;
 }
 
 .basketCardTop {
-    /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
 }
 
-.basketCardBottom {
-    /* background-color: green; */
+.basketItemTitle {
+    font-size: 22px;
+}
+
+.basketCardTop img {
+    width: 16px;
+}
+
+.amountControls {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.amountControls button {
+    all: unset;
+}
+
+.amountControls span {
+    font-size: 18px;
 }
 
 .basketCardBottom {
+    margin-top: -10px;
     display: flex;
     justify-content: space-between;
-    /* background-color: red; */
 }
 
 .basketSummary {
@@ -73,13 +130,113 @@
     flex-direction: column;
     gap: 5px;
     border-radius: 5px;
+    font-size: 18px;
+}
+
+.basketSection button {
+    cursor: pointer;
+}
+
+.deleteBtn {
+    all: unset;
+    width: fit-content;
 }
 
 .buyBtn {
-    margin-top: 10px;
-    padding: 5px 10px;
+    margin-top: 30px;
+    padding: 7px 10px;
     width: fit-content;
     align-self: center;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.emptyBasket {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    color: var(--basket-color);
+}
+
+.emptyBasket span {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.emptyBasket p {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.emptyBasket img {
+    margin-top: 20%;
+}
+
+dialog {
+    position: fixed;
+    top: 35%;
+    padding: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    overflow: hidden;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
+    background-color: rgb(60, 59, 59);
+    color: var(--basket-color);
+}
+
+.myDialog {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+}
+
+.myDialog>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.myDialog img {
+    width: 80px;
+    animation: deliveryAnimation 3s cubic-bezier(0.7, 0, 1, 1);
+}
+
+@keyframes deliveryAnimation {
+    0% {
+        transform: translateX(0px);
+    }
+
+    15% {
+        transform: translateX(-12px);
+    }
+
+    100% {
+        transform: translateX(300px);
+        /* opacity: 0; */
+    }
+}
+
+.myDialog span {
+    font-size: 42px;
+}
+
+.myDialog p {
+    font-size: 29px;
 }

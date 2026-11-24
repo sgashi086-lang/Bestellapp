@@ -35,16 +35,35 @@
                 <h1><span>American</span><span>Burger</span></h1>
                 <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
             </div>
-            <p>Free Delivery up to 35 $</p>
         </section>
         <div class="mainContainer" id="mainContainer">
             <div class="contentWrapper" id="contentWrapper">
+                <p>Free Delivery up to 50 $</p>
+                <nav class="sectionNavBar">
+                    <ul>
+                        <li>
+                            <a href="#burgerSection">
+                                <img src="./assets/icons/burger_nav_icon.png" alt="Burger Nav Icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pizzaSection">
+                                <img src="./assets/icons/pizza_nav_icon.png" alt="Pizza Nav Icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#saladSection">
+                                <img src="./assets/icons/salad_nav_icon.png" alt="Salad Nav Icon">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
                 <section class="orderSection" id="burgerSection">
                     <h2><img src="./assets/icons/burger_icon.png" alt="">Burgers</h2>
                     <div class="listContainer" id="burgerList"></div>
                 </section>
                 <section class="orderSection" id="pizzaSection">
-                    <h2><img src="./assets/icons/pizza_icon.png" alt="">Pizza (30cm)</h2>
+                    <h2><img src="./assets/icons/pizza_icon.png" alt="">Pizzas <span>(30cm)</span></h2>
                     <div class="listContainer" id="pizzaList"></div>
                 </section>
                 <section class="orderSection" id="saladSection">
@@ -54,23 +73,23 @@
             </div>
             <section class="basketSection" id="basketSection">
                 <div class="basketContainer" id="basketContainer">
-                    <h3><img alt="">Your Basket</h3>
-                    <div class="deliveryToggle" id="deliveryToggleContainer"></div>
-                    <div id="basketItems" class="basketItems"></div>
-                    <div id="basketSummary" class="basketSummary"></div>
+                    <h3>Your Basket</h3>
+                    <div id="deliveryToggleContainer"></div>
+                    <div class="basketScrollBox" id="basketScrollBox">
+                        <div id="basketItems" class="basketItems"></div>
+                        <div id="basketSummary" class="basketSummary"></div>
+                    </div>
                 </div>
             </section>
+            <dialog class="d_none" id="myDialog"></dialog>
         </div>
 
     </main>
     <footer>
         <span>&copy; 2026 Bestellapp</span>
-        <span>Imprint</span>
+        <a href="./sites/imprint.html">Imprint</a>
         <span>Cookies</span>
     </footer>
-
-    
-
 </body>
 
 </html>

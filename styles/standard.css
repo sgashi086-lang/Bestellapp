@@ -11,6 +11,8 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    scroll-behavior: smooth;
+    background-color: white;
 }
 
 main {
