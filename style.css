@@ -1,7 +1,7 @@
 header,
 footer {
     width: 100%;
-    z-index: 999;
+    z-index: 3;
     padding: 20px var(--container-pad);
     display: flex;
     justify-content: space-between;
@@ -295,6 +295,21 @@ section h2 img {
     cursor: pointer;
 }
 
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    z-index: 999;
+    padding: 10px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+
+.scrollToTopBtn img {
+    width: 30px;
+}
+
 footer {
     margin-top: auto;
     box-shadow: 0 -18px 25px 0 rgba(0, 0, 0, 0.15);
@@ -337,8 +352,8 @@ footer a {
 
 .basketBadge {
     position: absolute;
-    top: -5px;
-    right: -8px;
+    top: 3px;
+    right: 45px;
     min-width: 18px;
     height: 18px;
     padding: 0 4px;

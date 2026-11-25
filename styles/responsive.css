@@ -31,6 +31,15 @@
 }
 
 @media (max-width: 768px) {
+    header {
+        justify-content: center
+        ;
+    }
+
+    .burgerMenu {
+        display: none;
+    }
+
     .contentWrapper nav,
     .basketSection {
         display: none;
@@ -83,6 +92,11 @@
     .deliveryToggle { flex-direction: row; }
     dialog { margin-top: -50px; }
 
+    .scrollToTopBtn {
+        bottom: 80px;
+        right: 10px;
+    }
+
     footer {
         z-index: 3;
         flex-direction: column-reverse;
@@ -90,7 +104,7 @@
     }
 
     .underFooter {
-        position: fixed;
+        position: sticky;
         bottom: 0;
         left: 0;
         width: 100%;

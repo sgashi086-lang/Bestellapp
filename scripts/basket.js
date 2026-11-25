@@ -116,6 +116,7 @@ function decreaseAmount(index) {
         content.classList.add('d_none');
     }
     renderBasket();
+    updateBasketBadge();
 }
 
 function removeItem(index) {
@@ -126,6 +127,7 @@ function removeItem(index) {
     if (basket.length === 0) {
         content.classList.add('d_none');
     }
+    updateBasketBadge();
 }
 
 function orderNow(total) {
@@ -134,11 +136,20 @@ function orderNow(total) {
     renderBasket();
     renderDialog();
     toggleModal();
+    localStorage.removeItem('bestellapp_basket', JSON.stringify(basket));
+    localStorage.removeItem('bestellapp_delivery', JSON.stringify(isDelivery));
+    updateBasketBadge();
 }
 
 function openBasket() {
     let basket = document.getElementById('basketSection');
     basket.classList.toggle('showBasket');
+    if (basket.classList.contains('showBasket')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+        basket.classList.contains('showBasket')
+    }
 }
 
 function toggleModal() {
@@ -189,20 +200,11 @@ function closeModal() {
     dialog.classList.add('d_none');
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
     });
 
 }
 
 renderBasket();
-
-function saveLastOrder(totalPrice) {
-    let orderData = {
-        ordered: true,
-        totalPrice: totalPrice.toFixed(2) + '$'
-    }
-    localStorage.setItem('bestellapp_lastOrder', JSON.stringify(orderData));
-}
 
 function updateBasketBadge() {
     let badge = document.getElementById('basketBadge');
