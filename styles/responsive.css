@@ -16,10 +16,7 @@
 }
 
 @media (max-width: 942px) {
-
-    .dishCard {
-        max-width: 400px;
-    }
+    .dishCard { max-width: 400px; }
 
     .dishCard img {
         width: 100%;
@@ -34,17 +31,25 @@
 }
 
 @media (max-width: 768px) {
-
-    body:has(.basketSection.showBasket) {
-        overflow: hidden;
-    }
-
-    body:has(dialog[open]) {
-        overflow: hidden;
-    }
-
-    .contentWrapper nav {
+    .contentWrapper nav,
+    .basketSection {
         display: none;
+    }
+
+    .basketSection,
+    .underFooter {
+        z-index: 999;
+    }
+
+    .basketSection.showBasket {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: calc(100vh - 40px);
+        border-radius: 0;
+        display: flex;
     }
 
     .listContainer {
@@ -75,30 +80,8 @@
         align-items: flex-end;
     }
 
-    .basketSection {
-        z-index: 999;
-        display: none;
-    }
-
-    .basketSection.showBasket {
-        position: fixed;
-        top: 0;
-        left: 0;
-        margin: 0;
-        width: 100%;
-        height: calc(100vh - 40px);
-        border-radius: 0;
-        z-index: 999;
-        display: flex;
-    }
-
-    .deliveryToggle {
-        flex-direction: row;
-    }
-
-    .dialog {
-        margin-top: -50px;
-    }
+    .deliveryToggle { flex-direction: row; }
+    dialog { margin-top: -50px; }
 
     footer {
         z-index: 3;
@@ -110,38 +93,25 @@
         position: fixed;
         bottom: 0;
         left: 0;
-        right: 0;
-        z-index: 999;
+        width: 100%;
         display: flex;
     }
-
 }
 
 @media (max-width: 600px) {
     h1 {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     }
 
     @keyframes bildAnimation {
-        from {
-            transform: translateX(-350px);
-        }
-
-        to {
-            transform: translateX(0px);
-        }
+        from { transform: translateX(-350px); }
+        to { transform: translateX(0); }
     }
 
-    .listContainer {
-        padding: 20px 20px;
-    }
-
-    .dishCard {
-        max-width: 400px;
-    }
+    .listContainer { padding: 20px; }
+    .dishCard { max-width: 400px; }
 
     .dishCard img {
         width: 100%;

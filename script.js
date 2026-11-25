@@ -12,4 +12,5 @@ renderMenuCategory('burgerList', burgers);
 renderMenuCategory('pizzaList', pizzas);
 renderMenuCategory('saladList', salads);
 
-removeContent();
+loadFromLocalStorage();
+renderBasket();

@@ -1,0 +1,14 @@
+// localStorage.clear();
+
+function saveToLocalStorage() {
+    localStorage.setItem('bestellapp_basket', JSON.stringify(basket));
+    localStorage.setItem('bestellapp_delivery', JSON.stringify(isDelivery));
+}
+
+
+function loadFromLocalStorage() {
+    let savedBasket = localStorage.getItem('bestellapp_basket');
+    let savedDelivery = localStorage.getItem('bestellapp_delivery');
+    if (savedBasket) basket = JSON.parse(savedBasket);
+    if (savedDelivery !== null) isDelivery = JSON.parse(savedDelivery);
+}

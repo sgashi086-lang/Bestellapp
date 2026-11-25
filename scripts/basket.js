@@ -21,7 +21,8 @@ function renderBasket() {
     toggleContainer.innerHTML = getDeliveryToggleTemplate(isDelivery);
     renderBasketItems(basketItems);
     renderBasketSummary(basketSummary);
-    // removeContent();
+    saveToLocalStorage();
+    updateBasketBadge();
 }
 
 function removeContent() {
@@ -127,7 +128,8 @@ function removeItem(index) {
     }
 }
 
-function orderNow() {
+function orderNow(total) {
+    saveLastOrder(total);
     basket = [];
     renderBasket();
     renderDialog();
@@ -193,3 +195,19 @@ function closeModal() {
 }
 
 renderBasket();
+
+function saveLastOrder(totalPrice) {
+    let orderData = {
+        ordered: true,
+        totalPrice: totalPrice.toFixed(2) + '$'
+    }
+    localStorage.setItem('bestellapp_lastOrder', JSON.stringify(orderData));
+}
+
+function updateBasketBadge() {
+    let badge = document.getElementById('basketBadge');
+    if (!badge) return;
+    let totalItems = basket.reduce((sum, item) => sum + item.amount, 0);
+    badge.textContent = totalItems;
+    badge.classList.toggle('d_none', totalItems === 0);
+}

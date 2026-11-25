@@ -73,7 +73,7 @@ function getBasketSummaryTemplate(subtotal, deliveryFee, total) {
             <span>Total</span>
             <span>${total.toFixed(2)} $</span>
         </div>
-        <button type="button" class="buyBtn" onclick="orderNow()">
+        <button type="button" class="buyBtn" onclick="orderNow(${total})">
             Buy now (${total.toFixed(2)} $)
         </button>
     `;

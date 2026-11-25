@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./styles/responsive.css">
 
 
+    <script defer src="./scripts/storage.js"></script>
     <script defer src="./scripts/db.js"></script>
     <script defer src="./scripts/templates.js"></script>
     <script defer src="./scripts/basket.js"></script>
@@ -32,7 +33,14 @@
                 <img src="./assets/images/backgrounds/Burger1.jpg" alt="BurgerHouse Logo">
             </div>
             <div class="heroText">
-                <h1><span>American</span><span>Burger</span></h1>
+                <div class="heroTitleRow">
+                    <h1><span>American</span><span>Burger</span></h1>
+                    <div class="ratingBadge" id="ratingBadge" onclick="addRating()" title="Click to rate!">
+                        <span>★</span>
+                        <strong id="ratingScore">4,1</strong>
+                        <span class="ratingCount" id="ratingCount">(317)</span>
+                    </div>
+                </div>
                 <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
             </div>
         </section>
@@ -63,7 +71,11 @@
                     <div class="listContainer" id="burgerList"></div>
                 </section>
                 <section class="orderSection" id="pizzaSection">
-                    <h2><img src="./assets/icons/dishes_icons/pizza_icon.png" alt=""><div class="pizzaTitle"><p>Pizzas</p> <span>(30cm)</span></div></h2>
+                    <h2><img src="./assets/icons/dishes_icons/pizza_icon.png" alt="">
+                        <div class="pizzaTitle">
+                            <p>Pizzas</p> <span>(30cm)</span>
+                        </div>
+                    </h2>
                     <div class="listContainer" id="pizzaList"></div>
                 </section>
                 <section class="orderSection" id="saladSection">
@@ -93,10 +105,18 @@
     <footer class="underFooter">
         <nav>
             <ul>
-                <li><button><a href="./index.html"><img src="./assets/icons/underfooter_icons/Home.png" alt="Home Icon"></a></button></li>
-                <li><button><a href=""><img src="./assets/icons/underfooter_icons/Profile.png" alt="Profile Icon"></a></button></li>
-                <li><button><a href=""><img src="./assets/icons/underfooter_icons/orders.png" alt="Order Icon"></a></button></li>
-                <li><button onclick="openBasket()"><img src="./assets/icons/underfooter_icons/basket.png" alt="Basket Icon"></button></li>
+                <li><button><a href="./index.html"><img src="./assets/icons/underfooter_icons/Home.png"
+                                alt="Home Icon"></a></button></li>
+                <li><button><a href=""><img src="./assets/icons/underfooter_icons/Profile.png"
+                                alt="Profile Icon"></a></button></li>
+                <li><button><a href=""><img src="./assets/icons/underfooter_icons/orders.png"
+                                alt="Order Icon"></a></button></li>
+                <li>
+                    <button type="button" class="basketNavBtn" onclick="openBasket()">
+                        <img src="./assets/icons/basket.png" alt="Basket Icon">
+                        <span class="basketBadge d_none" id="basketBadge">0</span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </footer>

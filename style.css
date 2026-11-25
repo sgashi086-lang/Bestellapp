@@ -2,25 +2,20 @@ header,
 footer {
     width: 100%;
     z-index: 999;
+    padding: 20px var(--container-pad);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(59, 59, 109, 1);
+    background-color: var(--nav-blue);
     color: white;
 }
 
 header {
-    padding: 20px max(50px, (100% - 1440px) / 2);
     box-shadow: 0 18px 25px -5px rgba(0, 0, 0, 0.15);
 }
 
-header img:nth-child(1) {
-    width: 90px;
-}
-
-header img:nth-child(2) {
-    width: 30px;
-}
+header img:nth-child(1) { width: 90px; }
+header img:nth-child(2) { width: 30px; }
 
 p, span {
     letter-spacing: 1px;
@@ -36,7 +31,6 @@ p, span {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     gap: 50px;
     background-color: white;
@@ -45,10 +39,7 @@ p, span {
 .heroTitle {
     width: 100%;
     height: 400px;
-    background-image: url(./assets/images/backgrounds/Hero_Cover4.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url(./assets/images/backgrounds/Hero_Cover4.jpg) center / cover;
 }
 
 .heroImage {
@@ -61,42 +52,30 @@ p, span {
     align-items: center;
     border-radius: 50%;
     background-color: white;
-    
     animation: bildAnimation 5s ease forwards;
 }
 
 @keyframes bildAnimation {
-    from {
-        transform: translateX(-200px);
-    }
-    to {
-        transform: translateX(150px);
-    }
+    from { transform: translateX(-200px); }
+    to { transform: translateX(150px); }
 }
-
-
 
 .heroImage::before,
 .heroImage::after {
     content: "";
     position: absolute;
-    bottom: 53px;
-    /* Höhe der weißen Bodenlinie */
+    bottom: 56px;
     width: 30px;
     height: 26px;
     pointer-events: none;
 }
 
-/* Linke Innenrundung */
 .heroImage::before {
-    bottom: 56px;
     left: -24.5px;
     background: radial-gradient(circle at 0 0, transparent 24px, white 25px);
 }
 
-/* Rechte Innenrundung */
 .heroImage::after {
-    bottom: 56px;
     right: -24.5px;
     background: radial-gradient(circle at 100% 0, transparent 24px, white 25px);
 }
@@ -105,17 +84,12 @@ p, span {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-
     animation: imgRotation 5s ease forwards;
 }
 
 @keyframes imgRotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .heroText {
@@ -123,31 +97,52 @@ p, span {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 5px;
     container-type: inline-size;
     text-align: center;
 }
 
+.heroTitleRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.ratingBadge {
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 6px;
+    background-color: var(--basket-color); /* Dein #FDEADC aus variables.css! */
+    font-family: 'Roboto Condensed';
+    font-size: 16px;
+    color: #2b2b2b;
+    cursor: pointer;
+}
+
+.ratingCount {
+    color: #6e6e6e;
+    font-weight: 400;
+}
+
+
 h1 {
     font-family: 'Lobster Two';
     font-size: clamp(3rem, 2.8239rem + 0.7512cqi, 3.5rem);
-    font-style: normal;
     font-weight: 700;
 }
 
 h1:nth-child(1) {
     color: var(--primary-color);
-
-    && :nth-child(2) {
-        color: var(--accent-color);
-    }
+    && :nth-child(2) { color: var(--accent-color); }
 }
 
 .heroText p {
     font-family: 'Roboto Condensed';
-    font-style: normal;
     font-size: clamp(1.125rem, 1.081rem + 0.1878cqi, 1.25rem);
     font-weight: 500;
 }
@@ -164,7 +159,6 @@ h1:nth-child(1) {
     top: 230px;
     right: calc(max(0px, (100% - 1440px) / 2) + 315px);
     z-index: 999;
-    width: fit-content;
     height: calc(100% - 300px);
     transform: translateY(30px);
 }
@@ -176,12 +170,9 @@ h1:nth-child(1) {
     display: flex;
     flex-direction: column;
     gap: 5px;
-
 }
 
-.sectionNavBar ul li:nth-child(2) img {
-    width: 30px;
-}
+.sectionNavBar ul li:nth-child(2) img { width: 30px; }
 
 .sectionNavBar li {
     width: 40px;
@@ -190,26 +181,16 @@ h1:nth-child(1) {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    
 }
 
-.sectionNavBar li:nth-child(1) {
-    background-color: var(--primary-color);
-}
-
-.sectionNavBar li:nth-child(2) {
-    background-color: var(--accent-color);
-}
-
-.sectionNavBar li:nth-child(3) {
-    background-color: green;
-}
+.sectionNavBar li:nth-child(1) { background-color: var(--primary-color); }
+.sectionNavBar li:nth-child(2) { background-color: var(--accent-color); }
+.sectionNavBar li:nth-child(3) { background-color: green; }
 
 .contentWrapper {
     width: 100%;
     flex-shrink: 0;
 }
-
 
 .contentWrapper > p {
     margin-top: 50px;
@@ -226,15 +207,13 @@ section h2 {
     position: relative;
     z-index: 1;
     width: 100%;
-    padding: 0 0 5px max(50px, (100% - 1440px) / 2);
+    padding: 0 0 5px var(--container-pad);
     display: flex;
     align-items: center;
     gap: 15px;
     box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.15);
-    background-color: rgba(59, 59, 109, 1);
-    text-align: left;
+    background-color: var(--nav-blue);
     font-family: 'Racing Sans One';
-    font-style: normal;
     font-size: 50px;
     font-weight: 400;
     color: white;
@@ -244,13 +223,11 @@ section h2 {
     display: flex;
     align-items: center;
     gap: 20px;
-
 }
 
 section h2 span {
     font-family: 'Roboto Condensed';
     font-size: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
-    font-style: normal;
     font-weight: 400;
 }
 
@@ -260,7 +237,7 @@ section h2 img {
 }
 
 .listContainer {
-    padding: 20px calc(max(50px, (100% - 1440px) / 2) + 330px) 20px max(50px, (100% - 1440px) / 2);
+    padding: 20px calc(var(--container-pad) + 330px) 20px var(--container-pad);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -272,7 +249,6 @@ section h2 img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: stretch;
     gap: 15px;
     box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
@@ -285,7 +261,6 @@ section h2 img {
     width: 200px;
     height: 120px;
     border-radius: 12px;
-    /* border: 2px solid blue; */
 }
 
 .infoBox {
@@ -299,26 +274,20 @@ section h2 img {
 .infoBox span {
     font-size: 32px;
     font-weight: bold;
-    color: white;
 }
 
-.infoBox p {
-    font-size: 16px;
-}
+.infoBox p { font-size: 16px; }
 
 .buyBox {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
-
 }
 
 .buyBox button {
     all: unset;
     padding: 5px 8px;
-    display: flex;
-    flex-direction: column;
     border-radius: 20px;
     background-color: white;
     font-size: 16px;
@@ -328,7 +297,6 @@ section h2 img {
 
 footer {
     margin-top: auto;
-    padding: 20px max(50px, (100% - 1440px) / 2);
     box-shadow: 0 -18px 25px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -343,27 +311,44 @@ footer a {
     background-color: rgb(54, 53, 52);
 }
 
-.underFooter nav {
+.underFooter nav,
+.underFooter nav ul {
     width: 100%;
 }
 
-.underFooter nav ul{
-    width: 100%;
+.underFooter nav ul {
     display: flex;
     justify-content: space-around;
     gap: 15px;
-    /* background-color: red; */
-}
-
-.underFooter nav ul li {
     list-style: none;
 }
 
-.underFooter button {
-    all: unset;
-}
+.underFooter button { all: unset; }
 
 .underFooter nav ul li img {
     width: 30px;
     display: block;
+}
+
+.basketNavBtn {
+    position: relative;
+    cursor: pointer;
+}
+
+.basketBadge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    font-family: 'Roboto Condensed';
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
 }
