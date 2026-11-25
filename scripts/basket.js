@@ -25,8 +25,8 @@ function renderBasket() {
 }
 
 function removeContent() {
-    let basketSection  = document.getElementById('basketContainer');
-    let basketItems  = document.getElementById('basketItems');
+    let basketSection = document.getElementById('basketContainer');
+    let basketItems = document.getElementById('basketItems');
     if (basketItems.innerHTML.trim() === '' || basketItems.textContent.includes('No Order yet')) {
         basketSection.classList.add('d_none');
     }
@@ -134,6 +134,11 @@ function orderNow() {
     toggleModal();
 }
 
+function openBasket() {
+    let basket = document.getElementById('basketSection');
+    basket.classList.toggle('showBasket');
+}
+
 function toggleModal() {
     let dialog = document.getElementById('myDialog');
     if (dialog.open) {
@@ -149,7 +154,7 @@ function activateButton() {
         button.addEventListener('click', () => {
             buttons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-        });           
+        });
     });
 }
 
@@ -171,13 +176,20 @@ function openModal() {
 
 function closeModal() {
     let dialog = document.getElementById('myDialog');
+    let basket = document.getElementById('basketSection');
     clearTimeout(modalTimeout);
     if (dialog.open) {
         dialog.close();
     }
     document.body.style.overflow = '';
-    document.getElementById('basketSection').classList.remove('d_none');
-    document.getElementById('myDialog').classList.add('d_none');
+    basket.classList.remove('showBasket');
+    basket.classList.remove('d_none');
+    dialog.classList.add('d_none');
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
 }
 
 renderBasket();

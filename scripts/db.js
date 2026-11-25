@@ -72,7 +72,7 @@ let salads = [
         "name": "Shepherd's salad",
         "price": 13.90,
         "ingredients": "Tomatoes, Cucumbers, Onions, Green bell pepper",
-        "image": "./assets/images/items_bg/salads_bg/Shepherd's_Salad.jpg"
+        "image": "./assets/images/items_bg/salads_bg/Shepherds_Salad.jpg"
     },
     {
         "name": "Sea Food Salad",

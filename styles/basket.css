@@ -8,7 +8,7 @@
     width: 300px;
     height: 600px;
     flex-shrink: 0;
-    background-color: rgb(60, 59, 59);
+    background-color: rgb(54, 53, 52);
     overflow-y: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
@@ -185,8 +185,10 @@
 dialog {
     position: fixed;
     top: 35%;
-    padding: 20px;
-    height: 200px;
+    padding: 0;
+    max-width: 90vw;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,8 +208,8 @@ dialog::backdrop {
 
 
 .myDialog {
+    padding: 50px;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -220,6 +222,8 @@ dialog::backdrop {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    text-align: center;
 }
 
 .myDialog img {
@@ -243,9 +247,9 @@ dialog::backdrop {
 }
 
 .myDialog span {
-    font-size: 42px;
+    font-size: clamp(2.25rem, 2.1179rem + 0.5634vw, 2.625rem);
 }
 
 .myDialog p {
-    font-size: 29px;
+    font-size: clamp(1.5rem, 1.3899rem + 0.4695vw, 1.8125rem);
 }
