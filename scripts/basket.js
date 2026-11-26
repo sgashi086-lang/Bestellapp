@@ -44,12 +44,20 @@ function addToBasket(name, price) {
     let existingItem = findBasketItem(name);
     if (existingItem) {
         existingItem.amount++;
+        renderBasket();
     } else {
         basket.push({ name: name, price: price, amount: 1 });
+        renderBasket();
+        setTimeout(() => {
+            let items = document.getElementById('basketItems');
+            if (items) {
+                items.scrollTop = items.scrollHeight;
+                if (items.parentElement) items.parentElement.scrollTop = items.parentElement.scrollHeight;
+            }
+        }, 0);
     }
-    renderBasket();
-    document.getElementById('basketScrollBox').scrollTop = 99999;
 }
+
 
 function setDeliveryMode(mode) {
     isDelivery = mode;
