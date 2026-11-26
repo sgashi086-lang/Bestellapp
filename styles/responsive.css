@@ -16,7 +16,9 @@
 }
 
 @media (max-width: 942px) {
-    .dishCard { max-width: 400px; }
+    .dishCard {
+        max-width: 400px;
+    }
 
     .dishCard img {
         width: 100%;
@@ -32,8 +34,7 @@
 
 @media (max-width: 768px) {
     header {
-        justify-content: center
-        ;
+        justify-content: center;
     }
 
     .burgerMenu {
@@ -45,6 +46,10 @@
         display: none;
     }
 
+    .heroTitleRow {
+        flex-direction: column;
+    }
+
     .basketSection,
     .underFooter {
         z-index: 999;
@@ -54,11 +59,11 @@
         position: fixed;
         top: 0;
         left: 0;
-        margin: 0;
         width: 100%;
         height: calc(100vh - 40px);
-        border-radius: 0;
+        margin: 0;
         display: flex;
+        border-radius: 0;
     }
 
     .listContainer {
@@ -74,8 +79,8 @@
     }
 
     .dishCard {
-        max-width: 713px;
         width: 100%;
+        max-width: 713px;
     }
 
     .dishCard img {
@@ -89,15 +94,20 @@
         align-items: flex-end;
     }
 
-    .deliveryToggle { flex-direction: row; }
-    dialog { margin-top: -50px; }
+    .deliveryToggle {
+        flex-direction: row;
+    }
+
+    dialog {
+        margin-top: -50px;
+    }
 
     .scrollToTopBtn {
         bottom: 80px;
         right: 10px;
     }
 
-    footer {
+    .siteFooter {
         z-index: 3;
         flex-direction: column-reverse;
         gap: 20px;
@@ -120,12 +130,22 @@
     }
 
     @keyframes bildAnimation {
-        from { transform: translateX(-350px); }
-        to { transform: translateX(0); }
+        from {
+            transform: translateX(-350px);
+        }
+
+        to {
+            transform: translateX(0);
+        }
     }
 
-    .listContainer { padding: 20px; }
-    .dishCard { max-width: 400px; }
+    .listContainer {
+        padding: 20px;
+    }
+
+    .dishCard {
+        max-width: 400px;
+    }
 
     .dishCard img {
         width: 100%;

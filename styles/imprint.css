@@ -4,13 +4,13 @@
 }
 
 body {
-    padding: 0 max(20px, (100% - 1440px) / 2); /* 20px statt 50px gibt dem Text auf Handys mehr Luft */
+    padding: 0 max(20px, (100% - 1440px) / 2);
 }
 
 header {
     position: sticky;
     top: 0;
-    padding: 50px 0 20px;
+    padding: 50px max(20px, (100% - 1000px) / 2);
     background-color: white;
 }
 

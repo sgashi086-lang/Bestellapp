@@ -10,31 +10,17 @@ function clearBasketContainers(toggle, items, summary) {
 }
 
 function renderBasket() {
-    let toggleContainer = document.getElementById('deliveryToggleContainer')
+    let toggleContainer = document.getElementById('deliveryToggleContainer');
     let basketItems = document.getElementById('basketItems');
     let basketSummary = document.getElementById('basketSummary');
     clearBasketContainers(toggleContainer, basketItems, basketSummary);
     toggleEmptyBasket();
-    if (basket.length === 0) {
-        return;
-    }
+    updateBasketBadge();
+    if (basket.length === 0) return;
     toggleContainer.innerHTML = getDeliveryToggleTemplate(isDelivery);
     renderBasketItems(basketItems);
     renderBasketSummary(basketSummary);
     saveToLocalStorage();
-    updateBasketBadge();
-}
-
-function removeContent() {
-    let basketSection = document.getElementById('basketContainer');
-    let basketItems = document.getElementById('basketItems');
-    if (basketItems.innerHTML.trim() === '' || basketItems.textContent.includes('No Order yet')) {
-        basketSection.classList.add('d_none');
-    }
-    else {
-        basketSection.classList.remove('d_none');
-    }
-    toggleEmptyTemplate();
 }
 
 function toggleEmptyBasket() {
@@ -43,24 +29,15 @@ function toggleEmptyBasket() {
     let basketEmpty = document.getElementById('emptyBasket');
     if (basket.length === 0) {
         basketContainer.classList.add('d_none');
-        if (!basketEmpty) {
-            basketSection.innerHTML += getEnptyBasketTemplate();
-        }
+        if (!basketEmpty) basketSection.insertAdjacentHTML('beforeend', getEmptyBasketTemplate());
     } else {
         basketContainer.classList.remove('d_none');
-        if (basketEmpty) {
-            basketEmpty.remove();
-        }
+        if (basketEmpty) basketEmpty.remove();
     }
 }
 
 function findBasketItem(name) {
-    for (let i = 0; i < basket.length; i++) {
-        if (basket[i].name === name) {
-            return basket[i];
-        }
-    }
-    return undefined;
+    return basket.find(item => item.name === name);
 }
 
 function addToBasket(name, price) {
@@ -106,75 +83,40 @@ function increaseAmount(index) {
 }
 
 function decreaseAmount(index) {
-    let content = document.getElementById('basketContainer');
     if (basket[index].amount > 1) {
         basket[index].amount--;
     } else {
-        basket.splice(index, 1)
+        basket.splice(index, 1);
     }
-    if (basket.length === 0) {
-        content.classList.add('d_none');
-    }
+    if (basket.length === 0) clearBasketStorage();
     renderBasket();
-    updateBasketBadge();
 }
 
 function removeItem(index) {
-    let content = document.getElementById('basketContainer');
     basket.splice(index, 1);
+    if (basket.length === 0) clearBasketStorage();
     renderBasket();
-
-    if (basket.length === 0) {
-        content.classList.add('d_none');
-    }
-    updateBasketBadge();
 }
 
 function orderNow(total) {
     saveLastOrder(total);
     basket = [];
+    clearBasketStorage();
     renderBasket();
     renderDialog();
-    toggleModal();
-    localStorage.removeItem('bestellapp_basket', JSON.stringify(basket));
-    localStorage.removeItem('bestellapp_delivery', JSON.stringify(isDelivery));
-    updateBasketBadge();
+    openModal();
 }
 
 function openBasket() {
-    let basket = document.getElementById('basketSection');
-    basket.classList.toggle('showBasket');
-    if (basket.classList.contains('showBasket')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-        basket.classList.contains('showBasket')
-    }
-}
-
-function toggleModal() {
-    let dialog = document.getElementById('myDialog');
-    if (dialog.open) {
-        closeModal();
-    } else {
-        openModal();
-    }
-}
-
-function activateButton() {
-    const buttons = document.querySelectorAll('.deliveryToggle button');
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            buttons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-        });
-    });
+    let basketEl = document.getElementById('basketSection');
+    basketEl.classList.toggle('showBasket');
+    document.body.style.overflow = basketEl.classList.contains('showBasket') ? 'hidden' : '';
 }
 
 function renderDialog() {
     let dialog = document.getElementById('myDialog');
     if (dialog) {
-        dialog.classList.remove('d_none')
+        dialog.classList.remove('d_none');
         dialog.innerHTML = getDialogTemplate();
     }
 }
@@ -189,22 +131,14 @@ function openModal() {
 
 function closeModal() {
     let dialog = document.getElementById('myDialog');
-    let basket = document.getElementById('basketSection');
+    let basketEl = document.getElementById('basketSection');
     clearTimeout(modalTimeout);
-    if (dialog.open) {
-        dialog.close();
-    }
+    if (dialog.open) dialog.close();
     document.body.style.overflow = '';
-    basket.classList.remove('showBasket');
-    basket.classList.remove('d_none');
+    basketEl.classList.remove('showBasket', 'd_none');
     dialog.classList.add('d_none');
-    window.scrollTo({
-        top: 0,
-    });
-
+    window.scrollTo({ top: 0 });
 }
-
-renderBasket();
 
 function updateBasketBadge() {
     let badge = document.getElementById('basketBadge');

@@ -1,6 +1,4 @@
 function getMenuTemplate(item) {
-    const safeName = item.name.replace(/'/g, "\\'");
-
     return `
         <div class="dishCard">
             <img src="${item.image || ''}" alt="${item.name}">
@@ -10,7 +8,7 @@ function getMenuTemplate(item) {
             </div>
             <div class="buyBox">
                 <span>${item.price.toFixed(2)} $</span>
-                <button type="button" onclick="addToBasket('${safeName}', ${item.price})">Add to basket</button>
+                <button type="button" data-name="${item.name}" onclick="addToBasket(this.dataset.name, ${item.price})">Add to basket</button>
             </div>
         </div>
     `;
@@ -37,7 +35,7 @@ function getBasketItemTemplate(item, index) {
         <div class="basketCard">
             <div class="basketCardTop">
                 <span class="basketItemTitle">${item.amount} x ${item.name}</span>
-                <button type="button" class="deleteBtn" onclick="removeItem(${index})" aria-label="Eintrag löschen">
+                <button type="button" class="deleteBtn" onclick="removeItem(${index})" aria-label="Delete Item">
                     <img src="./assets/icons/delete_icon.png" alt="Delete Icon">
                 </button>
             </div>
@@ -79,7 +77,7 @@ function getBasketSummaryTemplate(subtotal, deliveryFee, total) {
     `;
 }
 
-function getEnptyBasketTemplate() {
+function getEmptyBasketTemplate() {
     return `
         <div class="emptyBasket" id="emptyBasket">
             <span>Your Basket</span>

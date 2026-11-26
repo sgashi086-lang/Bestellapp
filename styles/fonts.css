@@ -2,40 +2,40 @@
   font-family: 'Lobster Two';
   font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/lobster-two-v22-latin-700.woff2') format('woff2');
+  src: url('../assets/fonts/lobster-two-v22-latin-700.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Racing Sans One';
   font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/racing-sans-one-v17-latin-regular.woff2') format('woff2');
+  src: url('../assets/fonts/racing-sans-one-v17-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Roboto Condensed';
   font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/roboto-condensed-v31-latin-regular.woff2') format('woff2');
+  src: url('../assets/fonts/roboto-condensed-v31-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Roboto Condensed';
   font-weight: 500;
   font-display: swap;
-  src: url('/assets/fonts/roboto-condensed-v31-latin-500.woff2') format('woff2');
+  src: url('../assets/fonts/roboto-condensed-v31-latin-500.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Roboto Condensed';
   font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/roboto-condensed-v31-latin-700.woff2') format('woff2');
+  src: url('../assets/fonts/roboto-condensed-v31-latin-700.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'VT323';
   font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/vt323-v18-latin-regular.woff2') format('woff2');
+  src: url('../assets/fonts/vt323-v18-latin-regular.woff2') format('woff2');
 }

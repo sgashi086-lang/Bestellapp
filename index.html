@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bestellapp</title>
+    <title>Bestellapp - American Burger</title>
 
+    <link rel="icon" type="image/png" href="./assets/icons/Logo 02.png">
     <link rel="stylesheet" href="./styles/variables.css">
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/basket.css">
     <link rel="stylesheet" href="./styles/responsive.css">
-
 
     <script defer src="./scripts/storage.js"></script>
     <script defer src="./scripts/db.js"></script>
@@ -23,99 +23,129 @@
 
 <body>
     <header>
-        <img src="./assets/icons/Logo 02.png" alt="Bestellapp Logo">
-        <img class="burgerMenu" src="./assets/icons/menu.png" alt="Burgermenu">
+        <a href="./index.html" aria-label="Home">
+            <img class="headerLogo" src="./assets/icons/Logo 02.png" alt="Bestellapp Logo">
+        </a>
+        <button type="button" class="burgerMenuBtn" aria-label="Open menu">
+            <img class="burgerMenu" src="./assets/icons/menu.png" alt="">
+        </button>
     </header>
+
     <main>
         <section class="heroSection" id="heroSection">
             <div class="heroTitle"></div>
             <div class="heroImage">
-                <img src="./assets/images/backgrounds/Burger1.jpg" alt="BurgerHouse Logo">
+                <img src="./assets/images/backgrounds/Burger1.jpg" alt="American Burger Logo">
             </div>
             <div class="heroText">
                 <div class="heroTitleRow">
                     <h1><span>American</span><span>Burger</span></h1>
-                    <div class="ratingBadge" id="ratingBadge" onclick="addRating()" title="Click to rate!">
+                    <button type="button" class="ratingBadge" id="ratingBadge" onclick="addRating()"
+                        title="Click to rate!">
                         <span>★</span>
-                        <strong id="ratingScore">4,1</strong>
-                        <span class="ratingCount" id="ratingCount">(317)</span>
-                    </div>
+                        <span class="ratingBox">
+                            <strong id="ratingScore">4,1</strong>
+                            <span class="ratingCount">(<span id="ratingCount" aria-live="polite">317</span>)</span>
+                        </span>
+                    </button>
                 </div>
                 <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
             </div>
         </section>
+
         <div class="mainContainer" id="mainContainer">
             <div class="contentWrapper" id="contentWrapper">
                 <p>free delivery on orders over 50 $</p>
-                <nav class="sectionNavBar">
+                <nav class="sectionNavBar" aria-label="Categories">
                     <ul>
                         <li>
-                            <a href="#burgerSection">
-                                <img src="./assets/icons/burger_nav_icon.png" alt="Burger Nav Icon">
+                            <a href="#burgerSection" aria-label="Burgers">
+                                <img src="./assets/icons/burger_nav_icon.png" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="#pizzaSection">
-                                <img src="./assets/icons/pizza_nav_icon.png" alt="Pizza Nav Icon">
+                            <a href="#pizzaSection" aria-label="Pizzas">
+                                <img src="./assets/icons/pizza_nav_icon.png" alt="">
                             </a>
                         </li>
                         <li>
-                            <a href="#saladSection">
-                                <img src="./assets/icons/salad_nav_icon.png" alt="Salad Nav Icon">
+                            <a href="#saladSection" aria-label="Salads">
+                                <img src="./assets/icons/salad_nav_icon.png" alt="">
                             </a>
                         </li>
                     </ul>
                 </nav>
+
                 <section class="orderSection" id="burgerSection">
                     <h2><img src="./assets/icons/dishes_icons/burger_icon.png" alt="">Burgers</h2>
                     <div class="listContainer" id="burgerList"></div>
                 </section>
+
                 <section class="orderSection" id="pizzaSection">
-                    <h2><img src="./assets/icons/dishes_icons/pizza_icon.png" alt="">
-                        <div class="pizzaTitle">
-                            <p>Pizzas</p> <span>(30cm)</span>
-                        </div>
+                    <h2>
+                        <img src="./assets/icons/dishes_icons/pizza_icon.png" alt="">
+                        <span class="pizzaTitle">
+                            <span>Pizzas</span> <span>(30cm)</span>
+                        </span>
                     </h2>
                     <div class="listContainer" id="pizzaList"></div>
                 </section>
+
                 <section class="orderSection" id="saladSection">
                     <h2><img src="./assets/icons/dishes_icons/salad_icon.png" alt="">Salads</h2>
                     <div class="listContainer" id="saladList"></div>
                 </section>
             </div>
-            <section class="basketSection" id="basketSection">
+
+            <aside class="basketSection" id="basketSection">
                 <div class="basketContainer" id="basketContainer">
                     <h3>Your Basket</h3>
                     <div id="deliveryToggleContainer"></div>
                     <div class="basketScrollBox" id="basketScrollBox">
                         <div id="basketItems" class="basketItems"></div>
-                        <div id="basketSummary" class="basketSummary"></div>
+                        <div id="basketSummary" class="basketSummary" aria-live="polite"></div>
                     </div>
                 </div>
-            </section>
+            </aside>
+
             <dialog class="dialog d_none" id="myDialog"></dialog>
         </div>
-
     </main>
-    <button type="button" class="scrollToTopBtn d_none" id="scrollToTopBtn" title="to the top" onclick="scrollToTop()"><img src="./assets/icons/scroll_to_top_icon.png" alt="Scroll To Top Icon"></button>
-    <footer>
+
+    <button type="button" class="scrollToTopBtn d_none" id="scrollToTopBtn" onclick="scrollToTop()" title="To the top" aria-label="Scroll to top">
+        <img src="./assets/icons/scroll_to_top_icon.png" alt="">
+    </button>
+
+    <footer class="siteFooter">
         <span>&copy; 2026 Bestellapp</span>
         <a href="./sites/imprint.html">Imprint</a>
         <span>Cookies</span>
     </footer>
+
     <footer class="underFooter">
-        <nav>
+        <nav aria-label="Mobile navigation">
             <ul>
-                <li><button><a href="./index.html"><img src="./assets/icons/underfooter_icons/Home.png"
-                                alt="Home Icon"></a></button></li>
-                <li><button><a href=""><img src="./assets/icons/underfooter_icons/Profile.png"
-                                alt="Profile Icon"></a></button></li>
-                <li><button><a href=""><img src="./assets/icons/underfooter_icons/orders.png"
-                                alt="Order Icon"></a></button></li>
                 <li>
-                    <button type="button" class="basketNavBtn" onclick="openBasket()">
-                        <img src="./assets/icons/basket.png" alt="Basket Icon">
-                        <span class="basketBadge d_none" id="basketBadge">0</span>
+                    <a href="./index.html" aria-label="Home">
+                        <img src="./assets/icons/underfooter_icons/Home.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <button type="button" aria-label="Profile">
+                        <img src="./assets/icons/underfooter_icons/Profile.png" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button type="button" aria-label="Orders">
+                        <img src="./assets/icons/underfooter_icons/orders.png" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="basketNavBtn" onclick="openBasket()" aria-label="Open basket">
+                        <span class="basketIconWrap">
+                            <img src="./assets/icons/basket.png" alt="">
+                            <span class="basketBadge d_none" id="basketBadge" aria-live="polite">0</span>
+                        </span>
                     </button>
                 </li>
             </ul>

@@ -22,3 +22,9 @@ main {
 .d_none {
     display: none !important;
 }
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary-color) !important;
+    outline-offset: 3px;
+}
