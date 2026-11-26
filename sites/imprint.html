@@ -6,13 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imprint</title>
 
+    <link rel="icon" type="image/png" href="./assets/icons/Logo 02.png">
     <link rel="stylesheet" href="../styles/variables.css">
     <link rel="stylesheet" href="../styles/imprint.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <header>
+        
+    </header>
+    <header>
+        <a href="./index.html" aria-label="Home">
+            <img class="headerLogo" src="../assets/icons/Logo 02.png" alt="Bestellapp Logo">
+        </a>
         <nav><a href="../index.html">&larr; HOME</a></nav>
+        <img class="burgerMenu" src="./assets/icons/menu.png" alt="">
     </header>
     <section class="imprintSection">
         <h2>Imprint</h2>
@@ -51,6 +60,37 @@
             illustrative purposes only.
         </p>
     </section>
+    <footer class="siteFooter">
+        <span>&copy; 2026 Bestellapp</span>
+        <a href="./sites/imprint.html">Imprint</a>
+        <span>Cookies</span>
+    </footer>
+
+    <footer class="underFooter">
+        <nav aria-label="Mobile navigation">
+            <ul>
+                <li>
+                    <a href="./index.html" aria-label="Home">
+                        <img src="./assets/icons/underfooter_icons/Home.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <img src="./assets/icons/underfooter_icons/Profile.png" alt="">
+                </li>
+                <li>
+                    <img src="./assets/icons/underfooter_icons/orders.png" alt="">
+                </li>
+                <li>
+                    <button type="button" class="basketNavBtn" onclick="openBasket()" aria-label="Open basket">
+                        <span class="basketIconWrap">
+                            <img src="./assets/icons/underfooter_icons/basket2.png" alt="">
+                            <span class="basketBadge d_none" id="basketBadge" aria-live="polite">0</span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 
 </html>
