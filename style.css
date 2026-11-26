@@ -367,7 +367,16 @@ section h2 img {
 
 .underFooter nav ul li img {
     width: 35px;
+    height: 35px;
+    object-fit: contain;
     display: block;
+}
+.basketIconWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 .underFooter a,
@@ -392,7 +401,7 @@ section h2 img {
 .basketBadge {
     position: absolute;
     top: -4px;
-    left: calc(100% - 6px);
+    left: calc(100% - 0px);
     min-width: 18px;
     height: 18px;
     padding: 0 4px;
