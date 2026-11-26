@@ -2,7 +2,7 @@
 .basketItems,
 .basketScrollBox {
     overflow-y: auto;
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
 }
 
 .basketSection {
@@ -25,7 +25,7 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    height: 95%;
+    max-height: 95%;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -33,8 +33,6 @@
     background-color: white;
     font-family: 'VT323';
 }
-
-.basketContainer h3 { font-size: 26px; }
 
 .basketContainer::before {
     content: "";
@@ -49,15 +47,12 @@
     background-size: 10px 20px;
 }
 
-.basketItems {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.basketContainer h3 {
+    font-size: 26px;
 }
 
 .deliveryToggle {
-    margin: 15px 0;
+    margin: 10px 0;
     display: flex;
     justify-content: space-evenly;
 }
@@ -70,10 +65,24 @@
     font-family: 'Roboto Condensed';
     font-size: 16px;
     color: white;
+    scale: 1;
+    transition: scale 0.3s ease;
 }
 
-.deliveryToggle button.active { 
+.deliveryToggle button:hover {
+    scale: 1.05;
+    color: var(--primary-color);
+}
+
+.deliveryToggle button.active {
     background-color: green;
+}
+
+.basketItems {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .basketCard {
@@ -81,7 +90,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .basketCardTop,
@@ -90,8 +99,13 @@
     justify-content: space-between;
 }
 
-.basketItemTitle { font-size: 22px; }
-.basketCardTop img { width: 16px; }
+.basketItemTitle {
+    font-size: 22px;
+}
+
+.basketCardTop img {
+    width: 18px;
+}
 
 .amountControls {
     display: flex;
@@ -99,9 +113,21 @@
     gap: 5px;
 }
 
+.amountControls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amountControls button:hover, .deleteBtn:hover img {
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.16);
+}
+
 .amountControls button,
 .deleteBtn {
-    all: unset;
+    border: none;
+    background-color: transparent;
 }
 
 .amountControls button:focus-visible {
@@ -109,25 +135,47 @@
     outline-offset: 3px;
 }
 
-.amountControls span { font-size: 18px; }
-.basketCardBottom { margin-top: -10px; }
+.amountControls span {
+    font-size: 20px;
+}
+
+.deleteBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteBtn img {
+    padding: 2px;
+}
+
+.basketCardBottom {
+    margin-top: -10px;
+}
 
 .basketSummary {
+    position: sticky;
+    bottom: 0;
+    left: 0;
     padding: 5px;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-size: 18px;
+    background-color: white;
+    font-size: 22px;
 }
 
-.basketSection button { 
+.basketSection button {
     cursor: pointer;
 }
 
 .buyBtn {
     width: fit-content;
     margin-top: 30px;
-    padding: 7px 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     align-self: center;
     border: none;
     border-radius: 20px;
@@ -150,8 +198,13 @@
     font-weight: 700;
 }
 
-.emptyBasket p { font-size: 24px; }
-.emptyBasket img { margin-top: 20%; }
+.emptyBasket p {
+    font-size: 24px;
+}
+
+.emptyBasket img {
+    margin-top: 20%;
+}
 
 dialog {
     position: fixed;
@@ -167,12 +220,12 @@ dialog {
     color: var(--basket-color);
 }
 
-dialog::backdrop { 
+dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.71);
 }
 
 .myDialog,
-.myDialog > div {
+.myDialog>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,11 +234,11 @@ dialog::backdrop {
 
 .myDialog {
     width: 100%;
-    padding: 50px;
+    padding: 20px;
     gap: 26px;
 }
 
-.myDialog > div {
+.myDialog>div {
     gap: 10px;
     text-align: center;
 }
@@ -196,10 +249,23 @@ dialog::backdrop {
 }
 
 @keyframes deliveryAnimation {
-    0% { transform: translateX(0); }
-    15% { transform: translateX(-12px); }
-    100% { transform: translateX(300px); }
+    0% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-12px);
+    }
+
+    100% {
+        transform: translateX(300px);
+    }
 }
 
-.myDialog span { font-size: clamp(2.25rem, 2.1179rem + 0.5634vw, 2.625rem); }
-.myDialog p { font-size: clamp(1.5rem, 1.3899rem + 0.4695vw, 1.8125rem); }
+.myDialog span {
+    font-size: clamp(2.25rem, 2.1179rem + 0.5634vw, 2.625rem);
+}
+
+.myDialog p {
+    font-size: clamp(1.5rem, 1.3899rem + 0.4695vw, 1.8125rem);
+}

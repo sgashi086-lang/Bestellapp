@@ -34,7 +34,7 @@ function getBasketItemTemplate(item, index) {
     return `
         <div class="basketCard">
             <div class="basketCardTop">
-                <span class="basketItemTitle">${item.amount} x ${item.name}</span>
+                <span class="basketItemTitle">${item.amount}x ${item.name}</span>
                 <button type="button" class="deleteBtn" onclick="removeItem(${index})" aria-label="Delete Item">
                     <img src="./assets/icons/delete_icon.png" alt="Delete Icon">
                 </button>

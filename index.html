@@ -38,14 +38,13 @@
             <div class="heroText">
                 <div class="heroTitleRow">
                     <h1><span>American</span><span>Burger</span></h1>
-                    <button type="button" class="ratingBadge" id="ratingBadge" onclick="addRating()"
-                        title="Click to rate!">
+                    <div class="ratingBadge">
                         <span>★</span>
                         <span class="ratingBox">
                             <strong id="ratingScore">4,1</strong>
                             <span class="ratingCount">(<span id="ratingCount" aria-live="polite">317</span>)</span>
                         </span>
-                    </button>
+                    </div>
                 </div>
                 <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
             </div>
@@ -99,10 +98,8 @@
                 <div class="basketContainer" id="basketContainer">
                     <h3>Your Basket</h3>
                     <div id="deliveryToggleContainer"></div>
-                    <div class="basketScrollBox" id="basketScrollBox">
-                        <div id="basketItems" class="basketItems"></div>
-                        <div id="basketSummary" class="basketSummary" aria-live="polite"></div>
-                    </div>
+                    <div class="basketItems" id="basketItems"></div>
+                    <div class="basketSummary" id="basketSummary" aria-live="polite"></div>
                 </div>
             </aside>
 

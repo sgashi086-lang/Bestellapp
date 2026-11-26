@@ -14,8 +14,12 @@ header {
     box-shadow: 0 18px 25px -5px rgba(0, 0, 0, 0.15);
 }
 
-.headerLogo { width: 90px; }
-.burgerMenu { width: 30px; }
+.headerLogo {
+    width: 90px;
+}
+.burgerMenu {
+    width: 30px;
+}
 
 p, span {
     letter-spacing: 1px;
@@ -120,10 +124,9 @@ p, span {
     border: none;
     border-radius: 6px;
     background-color: var(--basket-color);
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.212);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.116);
     font-size: 16px;
     color: #2b2b2b;
-    cursor: pointer;
 }
 
 .ratingCount {
@@ -173,20 +176,36 @@ h1:nth-child(1) {
     gap: 5px;
 }
 
-.sectionNavBar ul li:nth-child(2) img { width: 30px; }
+.sectionNavBar ul li:nth-child(2) img {
+    width: 30px;
+}
 
 .sectionNavBar li {
-    width: 40px;
-    height: 40px;
+    width: 43px;
+    height: 43px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    scale: 1;
+    transition: scale 0.3s ease;
 }
 
-.sectionNavBar li:nth-child(1) { background-color: var(--primary-color); }
-.sectionNavBar li:nth-child(2) { background-color: var(--accent-color); }
-.sectionNavBar li:nth-child(3) { background-color: green; }
+.sectionNavBar li:hover {
+    scale: 1.1;
+}
+
+.sectionNavBar li:nth-child(1) {
+    background-color: var(--primary-color);
+}
+
+.sectionNavBar li:nth-child(2) {
+    background-color: var(--accent-color);
+}
+
+.sectionNavBar li:nth-child(3) {
+    background-color: green;
+}
 
 .contentWrapper {
     width: 100%;
@@ -277,7 +296,9 @@ section h2 img {
     font-weight: bold;
 }
 
-.infoBox p { font-size: 16px; }
+.infoBox p {
+    font-size: 16px;
+}
 
 .buyBox {
     display: flex;
@@ -293,11 +314,19 @@ section h2 img {
 .buyBox button {
     all: unset;
     padding: 5px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     background-color: white;
     font-size: 16px;
     color: black;
     cursor: pointer;
+    transition: scale 0.3s ease;
+}
+
+.buyBox button:hover {
+    opacity: 0.8;
 }
 
 .buyBox button:focus-visible {
@@ -382,6 +411,27 @@ section h2 img {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+button,
+.underFooter button,
+.underFooter img {
+    scale: 1;
+    transition: scale 0.3s ease;
+}
+
+button:hover,
+.underFooter button:hover {
+    scale: 1.1;
+}
+
+.underFooter ul li:nth-child(1) {
+    scale: 1;
+    transition: scale 0.3s ease;
+}
+
+.underFooter ul li:nth-child(1):hover {
+    scale: 1.1;
 }
 
 .basketNavBtn {
