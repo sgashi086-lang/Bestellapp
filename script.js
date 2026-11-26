@@ -14,7 +14,6 @@ function init() {
     renderMenuCategory('pizzaList', pizzas);
     renderMenuCategory('saladList', salads);
     loadFromLocalStorage();
-    renderRating();
     renderBasket();
     showScrollBtn();
 }
@@ -33,16 +32,4 @@ function scrollToTop() {
     window.scrollTo({
         top: 0,
     });
-}
-
-function addRating() {
-    let countEl = document.getElementById('ratingCount');
-    let current = Number(countEl.textContent);
-    countEl.textContent = hasRated ? current - 1 : current + 1;
-    hasRated = !hasRated;
-    saveRatingStorage();
-}
-
-function renderRating() {
-    if (hasRated) document.getElementById('ratingCount').textContent = '318';
 }
