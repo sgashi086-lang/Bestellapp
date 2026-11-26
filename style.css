@@ -158,6 +158,13 @@ h1:nth-child(1) {
     align-items: flex-start;
 }
 
+#burgerSection,
+#pizzaSection,
+#saladSection {
+    scroll-margin-top: 50px;
+}
+
+
 .sectionNavBar {
     position: absolute;
     top: 230px;
@@ -358,6 +365,10 @@ section h2 img {
 .siteFooter a {
     text-decoration: none;
     color: white;
+}
+
+.siteFooter a:hover {
+    color: var(--accent-color);
 }
 
 .underFooter {
