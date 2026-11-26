@@ -99,5 +99,5 @@ function getDialogTemplate() {
                 <p>Your food is on the way!</p>
             </div>
         </div>
-    `
+    `;
 }

@@ -4,20 +4,20 @@ const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 function renderMenuCategory(containerId, itemsArray) {
     let containerRef = document.getElementById(containerId);
     containerRef.innerHTML = '';
-
     for (let i = 0; i < itemsArray.length; i++) {
-        containerRef.innerHTML += getMenuTemplate(itemsArray[i])
-
+        containerRef.innerHTML += getMenuTemplate(itemsArray[i]);
     }
 }
 
-renderMenuCategory('burgerList', burgers);
-renderMenuCategory('pizzaList', pizzas);
-renderMenuCategory('saladList', salads);
-
-loadFromLocalStorage();
-renderRating();
-renderBasket();
+function init() {
+    renderMenuCategory('burgerList', burgers);
+    renderMenuCategory('pizzaList', pizzas);
+    renderMenuCategory('saladList', salads);
+    loadFromLocalStorage();
+    renderRating();
+    renderBasket();
+    showScrollBtn();
+}
 
 function showScrollBtn() {
     window.addEventListener('scroll', () => {
@@ -34,8 +34,6 @@ function scrollToTop() {
         top: 0,
     });
 }
-
-showScrollBtn();
 
 function addRating() {
     let countEl = document.getElementById('ratingCount');

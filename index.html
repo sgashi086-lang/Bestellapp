@@ -21,14 +21,12 @@
     <script defer src="./script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <a href="./index.html" aria-label="Home">
             <img class="headerLogo" src="./assets/icons/Logo 02.png" alt="Bestellapp Logo">
         </a>
-        <button type="button" class="burgerMenuBtn" aria-label="Open menu">
-            <img class="burgerMenu" src="./assets/icons/menu.png" alt="">
-        </button>
+        <img class="burgerMenu" src="./assets/icons/menu.png" alt="">
     </header>
 
     <main>
@@ -112,7 +110,8 @@
         </div>
     </main>
 
-    <button type="button" class="scrollToTopBtn d_none" id="scrollToTopBtn" onclick="scrollToTop()" title="To the top" aria-label="Scroll to top">
+    <button type="button" class="scrollToTopBtn d_none" id="scrollToTopBtn" onclick="scrollToTop()" title="To the top"
+        aria-label="Scroll to top">
         <img src="./assets/icons/scroll_to_top_icon.png" alt="">
     </button>
 
@@ -131,14 +130,10 @@
                     </a>
                 </li>
                 <li>
-                    <button type="button" aria-label="Profile">
-                        <img src="./assets/icons/underfooter_icons/Profile.png" alt="">
-                    </button>
+                    <img src="./assets/icons/underfooter_icons/Profile.png" alt="">
                 </li>
                 <li>
-                    <button type="button" aria-label="Orders">
-                        <img src="./assets/icons/underfooter_icons/orders.png" alt="">
-                    </button>
+                    <img src="./assets/icons/underfooter_icons/orders.png" alt="">
                 </li>
                 <li>
                     <button type="button" class="basketNavBtn" onclick="openBasket()" aria-label="Open basket">

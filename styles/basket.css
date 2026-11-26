@@ -72,7 +72,9 @@
     color: white;
 }
 
-.deliveryToggle button.active { background-color: green; }
+.deliveryToggle button.active { 
+    background-color: green;
+}
 
 .basketCard {
     padding: 5px;
@@ -107,7 +109,6 @@
     outline-offset: 3px;
 }
 
-
 .amountControls span { font-size: 18px; }
 .basketCardBottom { margin-top: -10px; }
 
@@ -119,7 +120,9 @@
     font-size: 18px;
 }
 
-.basketSection button { cursor: pointer; }
+.basketSection button { 
+    cursor: pointer;
+}
 
 .buyBtn {
     width: fit-content;
@@ -164,7 +167,9 @@ dialog {
     color: var(--basket-color);
 }
 
-dialog::backdrop { background-color: rgba(0, 0, 0, 0.71); }
+dialog::backdrop { 
+    background-color: rgba(0, 0, 0, 0.71);
+}
 
 .myDialog,
 .myDialog > div {

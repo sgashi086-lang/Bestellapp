@@ -147,3 +147,11 @@ function updateBasketBadge() {
     badge.textContent = totalItems;
     badge.classList.toggle('d_none', totalItems === 0);
 }
+
+window.addEventListener('resize', () => {
+    let basketEl = document.getElementById('basketSection');
+    if (window.innerWidth > 768 && basketEl.classList.contains('showBasket')) {
+        basketEl.classList.remove('showBasket');
+        document.body.style.overflow = '';
+    }
+});

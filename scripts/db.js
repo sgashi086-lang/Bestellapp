@@ -59,7 +59,7 @@ let salads = [
     {
         "name": "Fruit Salad",
         "price": 15.90,
-        "ingredients": "Strawberries , Blueberries, Pineapple , Seedless grapes, Kiwis, Mandarin",
+        "ingredients": "Strawberries, Blueberries, Pineapple, Seedless grapes, Kiwis, Mandarin",
         "image": "./assets/images/items_bg/salads_bg/Fruit_Salad.jpg"
     },
     {
